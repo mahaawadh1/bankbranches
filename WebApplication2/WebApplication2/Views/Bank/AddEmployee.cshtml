@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model AddEmployeeForm
+@{
+    ViewData["Title"] = "Add Employee";
+}
+
+<h2>Add Employee</h2>
+
+<form asp-action="AddEmployee" asp-route-branchId="@ViewData["BranchId"]" method="post">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CivilId" class="control-label"></label>
+        <input asp-for="CivilId" class="form-control" />
+        <span asp-validation-for="CivilId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Position" class="control-label"></label>
+        <input asp-for="Position" class="form-control" />
+        <span asp-validation-for="Position" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Details" asp-route-id="@ViewData["BranchId"]">Back to Branch Details</a>
+</div>
